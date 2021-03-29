@@ -1,3 +1,4 @@
+import firebase from './service/firebaseConnection';
 
 function App() {
   return (
