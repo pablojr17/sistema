@@ -1,8 +1,33 @@
+import { useState } from "react";
+import { Link } from 'react-router-dom';
+import './styles.css';
+import logo from '../../assets/logo1.png';
 
 function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('clicou')
+  }
+
   return (
-    <div>
-      <h1>Pagina de Login</h1>
+    <div className="container-center">
+      <div className="login">
+        <div className="login-area">
+          <img src={logo} alt="Logo Sistema" />
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <h1>Entrar</h1>
+          <input type="text" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="pasasword" placeholder="**********" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <button type="submit">Acessar</button>
+        </form>
+
+        <Link to="/register">Criar uma conta</Link>
+      </div>
     </div>
   )
 }
