@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
+import { toast } from 'react-toastify';
 import firebase from '../service/firebaseConnection';
 
 export const AuthContext = createContext({});
@@ -22,6 +23,8 @@ function AuthProvider({ children }) {
     loadSorage()
   }, []);
 
+
+  //Login usuario
   async function signIn(email, password) {
     setLoadingAuth(true);
     await firebase.auth().signInWithEmailAndPassword(email, password)
@@ -41,14 +44,16 @@ function AuthProvider({ children }) {
         setUser(data);
         storageUser(data);
         setLoadingAuth(false);
+        toast.success('Bem vindo de volta!')
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Ops, algo deu errado!')
         setLoadingAuth(false);
       })
   }
 
-
+  //Cadastrando novo usuario
   async function signUp(email, password, nome) {
     setLoadingAuth(true);
     await firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -71,11 +76,14 @@ function AuthProvider({ children }) {
             setUser(data);
             storageUser(data);
             setLoadingAuth(false);
+            toast.success('Bem vindo a plaataforma');
           })
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Ops, algo deu errado');
         setLoadingAuth(false);
+
       })
   }
 
@@ -83,6 +91,7 @@ function AuthProvider({ children }) {
     localStorage.setItem('SistemaUser', JSON.stringify(data))
   }
 
+  //Logout
   async function signOut() {
     await firebase.auth().signOut();
     localStorage.removeItem('SistemaUser');
