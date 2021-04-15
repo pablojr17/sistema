@@ -49,11 +49,6 @@
   margin-right: .5em;
 }
 
-.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-}
-
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
@@ -79,10 +74,6 @@
 
   .sidebar a svg {
     display: none;
-  }
-
-  .content {
-    margin-left: 0px;
   }
 }
 

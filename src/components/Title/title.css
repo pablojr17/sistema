@@ -1,0 +1,53 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1em 0;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  padding: .8em;
+}
+
+.title span {
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  .sidebar div {
+    float: left;
+    background: none;
+    height: 50px;
+    padding: 10px;
+    } 
+
+  .sidebar div img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar a svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .sidebar a svg {
+    display: none;
+  }
+}
