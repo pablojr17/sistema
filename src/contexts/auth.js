@@ -76,7 +76,7 @@ function AuthProvider({ children }) {
             setUser(data);
             storageUser(data);
             setLoadingAuth(false);
-            toast.success('Bem vindo a plaataforma');
+            toast.success('Bem vindo a plataforma');
           })
       })
       .catch((error) => {
@@ -99,7 +99,17 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, loading, signUp, signOut, signIn, loadingAuth }}>
+    <AuthContext.Provider value={{
+      signed: !!user,
+      user,
+      loading,
+      signUp,
+      signOut,
+      signIn,
+      loadingAuth,
+      setUser,
+      storageUser
+    }}>
       {children}
     </AuthContext.Provider>
   )
