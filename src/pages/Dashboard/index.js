@@ -1,16 +1,42 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../contexts/auth';
+import './dashboard.css';
+import { useState } from 'react';
 import Title from '../../components/Title';
 import Header from '../../components/Header';
-import { FiHome } from 'react-icons/fi';
+import { FiMessageSquare, FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+
 
 function Dashboard() {
-  const { signOut } = useContext(AuthContext);
+  const [chamados, setChamados] = useState([]);
 
   return (
     <div>
       <Header />
-      <h1>Pagina de Dashboard</h1>
+
+      <div className="content">
+        <Title name="Atendimento">
+          <FiMessageSquare size={25} />
+        </Title>
+
+        {chamados.length === 0 ? (
+
+          <div className="container dashboard">
+            <span>Nenhum chamado registrado...</span>
+
+            <Link to="/new" className="new">
+              <FiPlus size={25} color="#FFf" />
+          Novo chamado
+        </Link>
+          </div>
+        ) : (
+          <>
+            <Link to="/new" className="new">
+              <FiPlus size={25} color="#FFf" />
+          Novo chamado
+        </Link>
+          </>
+        )}
+      </div>
     </div>
   )
 }
