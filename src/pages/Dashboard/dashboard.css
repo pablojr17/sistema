@@ -35,3 +35,53 @@
   opacity: 0.8;
   transform: scale(1.1);
 }
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th, table td {
+  padding: .62em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+table td .action {
+  border: 0;
+  padding: 5px;
+  margin-right: 2px;
+  align-items: center;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+table td .action svg {
+  vertical-align: middle;
+}
+
+table td .badge {
+  padding: 3px;
+  border-radius: 3px;
+  color: #fff
+}
