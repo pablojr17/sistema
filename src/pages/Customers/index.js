@@ -1,4 +1,4 @@
-
+import './customers.css';
 import Title from '../../components/Title';
 import Header from '../../components/Header';
 import { FiUser } from 'react-icons/fi';
@@ -46,7 +46,7 @@ export default function Customers() {
         </Title>
 
         <div className="container">
-          <form className="form-profile customers" onSubmit={handleAdd}>
+          <form className="form-profile" onSubmit={handleAdd}>
             <label>Nome Fantasia</label>
             <input type="text" value={nomeFantasia} placeholder="Nome da sua empresa" onChange={(e) => setNomeFantasia(e.target.value)} />
 
